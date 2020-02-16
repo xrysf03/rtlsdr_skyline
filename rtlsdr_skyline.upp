@@ -1,0 +1,22 @@
+uses
+	CtrlLib,
+	ScatterCtrl,
+	kissfft;
+
+link
+	C:\Data\Prog\rtl-sdr\rtl-sdr-release\x32\rtlsdr.dll;
+
+file
+	main.cpp,
+	rtlsdr_skyline.lay,
+	rtlsdr_skyline.h,
+	backend.cpp,
+	backend.h,
+	logger.cpp,
+	logger.h,
+	thumb.iml,
+	srcimp.tpp;
+
+mainconfig
+	"" = "GUI";
+

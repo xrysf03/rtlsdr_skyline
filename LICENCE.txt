@@ -1,0 +1,8 @@
+Licence: BSD
+
+AFAICT, Ultimate++ and its components are BSD-licensed, so this is legal.
+
+This software is provided as is.
+Feel free to use it for whatever you want,
+but don't hold me responsible if it eats your... snack. Or whatever.
+
