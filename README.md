@@ -11,8 +11,8 @@ A screenshot of rtlsdr_skyline.exe in action
 
 ## Download
 
-Download the latest binary build for Windows from [link TBD](rtlsdr_skyline-bin.zip).  
-The source code lives at [GitHub](https://github.com/xrysf03/rtlsdr_skyline.git). 
+To get started right away, [download a release](https://github.com/xrysf03/rtlsdr_skyline/releases) (zipped Windows binary) from GitHub.  
+The source code lives at [GitHub](https://github.com/xrysf03/rtlsdr_skyline.git) too. 
 
 ## Dependencies
 
