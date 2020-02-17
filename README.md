@@ -53,6 +53,20 @@ The KISS FFT within U++ is a "contributed package", placed in the bazaar/plugins
 While in the main IDE screen (editor), remember to toggle the build method to MINGW Release (rather than Debug). Unless you know better of course :-)  
 Also note that upon a first compilation, U++ compiles all the components and core libraries from source. On later rebuilds (when hacking at your own project), these are not rebuilt ever time... Only when you toggle or reconfigure the build method.
 
+## Usage
+
+You can probably figure out your way about...
+
+You need to fill in the starting and ending frequency. You can also enter the same number in both input boxes to scan a single channel. You can leave the FFT parameters at defaults, and calibration of the filter response is optional too.
+
+When you're finished with the parameters, just press Go.
+
+At the moment there's no Stop button - just wait for the scan to finish.
+
+If you select continuous mode (the "Loop" check box) and then you want to stop, just untick the Loop box and wait for the current pass to finish.
+
+The GUI is really simple. The parameter selection widgets do not take effect while the scanning activity is in progress. See also the chapter on Bugs etc.
+
 ## Bugs etc.
 
 The initial release, while I consider it a beta, should be pretty stable and useable at what it does.  
@@ -93,6 +107,18 @@ It is easy to detect clipping. Internally the code actually does contain a basic
 Just look at what RTLSDR Scanner can do (and more).
 
 * how about a sibling project that could use two RTL-SDR dongles with comparison of the spectra for a scalar filter analysis ?
+
+## HW notes
+
+For RTL-SDR to work, you need a USB DVB-T dongle with the Realtek RTL2832U chip. (The RTL2832P *might* work as well.) Other dongles won't work. Note that DVB-T is getting out of fashion, now with the arrival of DVB-T2. Which means that the old RTL2832U dongles may be cheap (discounted) for a while, and later may become scarce, if the DIY SDR market isn't strong enough...
+
+Note that most of these dongles have a miniature coax connector called the MCX as their input - and your first question will be, "how do I plug my coax cable into that".
+
+Some of these dongles come packaged with a conversion plug from IEC (the plain TV coax plug) to MCX. Frankly speaking I don't like those conversion plugs very much - they are stiff (robust) and a thick coax cable (maybe 7 mm thick) can provide dangerous leverage on the MCX connector. If that's your scenario, consider using a USB cable between the dongle and your computer, to alleviate the dangerous leverage on the fragile MCX socket.
+
+Other RTL2832 dongles come packaged with a small whip antenna on about 2 meters of thin coax cable. You can snip this cable and crimp some useful connector on that (such as an SMA female). Or, you can keep the antenna as it came out of the box - it can be useful for a very basic site survey.
+
+You can also buy the connectors and make a conversion pigtail. You need an MCX male plug and e.g. an SMA female socket (if you're in the 50-Ohm world). I would suggest about 20 cm of the RG174 cable for conversion. You need a crimp tool for the coax connectors and a thin-tipped soldering iron for the MCX male. To press the rear lid on the angled MCX male, I suggest that you use a bench vice with a piece of plastic sheet taped to the jaws (and the tiny brass circle lid taped in place over the connector body). Be gentle.
 
 ## Credits
 
