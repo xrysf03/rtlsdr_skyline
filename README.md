@@ -18,6 +18,7 @@ The source code lives at [GitHub](https://github.com/xrysf03/rtlsdr_skyline.git)
 
 You will need a copy of the rtlsdr.dll/librtlsdr.dll.  
 Until/unless someone complains, I am including one in the ZIP with the binary build of my Skyline.
+Apparently, another dependency is the libgcc_s_sjlj-1.dll, which in my system is a part of GtkSharp 2.12. Not sure how I got that. I'm including that DLL too, just in case.
 
 Further dependencies for the prebuilt Windows binary and for building from source code:
 
@@ -71,6 +72,11 @@ The GUI is really simple. The parameter selection widgets do not take effect whi
 
 The initial release, while I consider it a beta, should be pretty stable and useable at what it does.  
 It has only been tested (compilation and operation) under Windows 7. Test reports under different OS versions are welcome.
+
+### Known bugs
+
+Apparently, if you leave the window size at 2048, and enter a rather broad frequency range, such as 300 to 900 MHz, the Skyline freezes after you click Go. Apparently the ScatterCtrl widget has a problem digesting a data buffer that large (over a million individual values, or about 10 MB of data). I'll try to see into it further - meanwhile, consider decreasing your FFT window size to 128 or 256 when scanning across the whole band. A larger window size would only slow down the scanning progress, while bringing little in the way of extra information (the resulting dataset is way more detailed than your screen resolution).  
+OTOH, don't be afraid to increase the number of FFT windows per channel - that slows down the scanning too, but at the same time reduces the "fluff" on the trace and does not increase the number of data points in the set.
 
 ### Principal downsides and limits
 

@@ -274,6 +274,7 @@ void rtlsdr_skyline::member_log_this(const char* log_msg)
 	log_text << log_msg;
 	Edit_log.Append(log_text);
 	scroll_log();
+	Ctrl::ProcessEvents();
 }
 
 
@@ -472,7 +473,18 @@ void rtlsdr_skyline::scan_band_crude()
 	freq_bin_width = samp_rate / win_size;
 	win_size_decimal = bandwidth / freq_bin_width;
 	buf_size = win_size_decimal * num_freqs;
+
+	tmp_str = "Buffer size: ";
+	tmp_str << buf_size << " floating point elements";
+	log_this(tmp_str);
+	
 	buffer = new double[buf_size];
+	if (buffer == NULL)
+	{
+		log_this("Buffer alloc failed!");
+		goto over;
+	}
+	
 	for (int i=0; i<buf_size; i++)
 		buffer[i] = 0;
 
